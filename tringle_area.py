@@ -17,11 +17,20 @@ def calculate_tringle_area(high, base):
 
 def main():
     # input
-    high_from_user = int(input("Enter the high of the tringle: "))
-    base_from_user = int(input("Enter the base of the tringle: "))
+    while True:
+        high_from_user_str = input("Enter the high of the tringle cm : ")
+        base_from_user_str = input("Enter the base of the tringle cm : ")
 
-    # calling functions
-    calculate_tringle_area(high_from_user, base_from_user)
+        try:
+            high_from_user = int(high_from_user_str)
+            base_from_user = int(base_from_user_str)
+
+            # calling functions
+            calculate_tringle_area(high_from_user, base_from_user)
+            break
+        except:
+            print("Something wrong")
+            print("Please re-enter the values.")
 
 
 if __name__ == "__main__":
